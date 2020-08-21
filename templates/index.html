@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  	<meta charset="UTF-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  	<link rel="stylesheet" href="../static/style.css" />
+  	<title>Feedback</title>
+  </head>
+  <body>
+  	<div class="container">
+  		<img src="../static/logo.png" alt="IIITB" class="">
+  
+  		{% if message %}
+  			<p class="message">{{ message | safe }}</p>
+  		{% endif %}
+  		<form action="/submit" method="POST">
+  			<div class="form-group">
+          		<h3>Student Name</h3>
+          		<input
+            		type="text"
+            		name="Student"
+            		placeholder="Name of the Student"
+          		/>
+          		</div>
+          		
+          		<div class="form-group">
+          		<h3>Professor</h3>
+          		<select name="Professor">
+            			<option value="">Select Professor</option>
+            			<option value="Prof.Amit Chattopadhyay">Prof.Amit Chattopadhyay</option>
+            			<option value="Prof.Amit Prakash">Prof.Amit Prakash</option>
+            			<option value="Prof.Arti Dilip Yardi">Prof.Arti Dilip Yardi</option>
+            			<option value="Prof.Ashish Choudhury">Prof.Ashish Choudhury</option>
+            			<option value="Prof.Balaji Parthasarathy">Prof.Balaji Parthasarathy</option>
+            			<option value="Prof.Balakrishnan Ashok">Prof.Balakrishnan Ashok</option>
+            			<option value="Prof.Bidisha Chaudhuri">Prof.Bidisha Chaudhuri</option>
+            			<option value="Prof.Chandrashekar Ramanathan">Prof.Chandrashekar Ramanathan</option>
+            			<option value="Prof.Chetan Parikh">Prof.Chetan Parikh</option>
+            			<option value="Prof.Debabrata Das">Prof.Debabrata Das</option>
+            			<option value="Prof.Dinesh Babu Jayagopi">Prof.Dinesh Babu Jayagopi</option>
+            			<option value="Prof.G N Srinivasa Prasanna">Prof.G N Srinivasa Prasanna</option>
+            			<option value="Prof.G Srinivasaraghavan ">Prof.G Srinivasaraghavan </option>
+            			<option value="Prof.Girish S Kumar">Prof.Girish S Kumar</option>
+            			<option value="Prof.Harish Ramani">Prof.Harish Ramani</option>
+            			<option value="Prof.Janaki Srinivasan">Janaki Srinivasan</option>
+            			<option value="Prof.Jaya Sreevalsan Nair">Prof.Jaya Sreevalsan Nair</option>
+            			<option value="Prof.Jyotsna Bapat">Prof.Jyotsna Bapat</option>
+            			<option value="Prof.K K Subramaniam ">Prof.K K Subramaniam </option>
+            			<option value="Prof.K V Dinesha">Prof.K V Dinesha</option>
+            			<option value="Prof.Madhav Rao">Prof.Madhav Rao</option>
+            			<option value="Prof.Manish Gupta">Prof.Manish Gupta</option>
+            			<option value="Prof.Manisha Kulkarni">Prof.Manisha Kulkarni</option>
+            			<option value="Prof.Meenakshi D'Souza">Prof.Meenakshi D'Souza</option>
+            			<option value="Prof.Mohan Ram C ">Prof.Mohan Ram C </option>
+            			<option value="Prof.Nanditha Rao">Prof.Nanditha Rao</option>
+            			<option value="Prof.Neelam Sinha">Prof.Neelam Sinha</option>
+            			<option value="Prof.Pradeesha Ashok">Prof.Pradeesha Ashok</option>
+            			<option value="Prof.Preeti Mudliar">Prof.Preeti Mudliar</option>
+            			<option value="Prof.Priyanka Das">Prof.Priyanka Das</option>
+            			<option value="Prof.Radha M Parikh">Prof.Radha M Parikh</option>
+            			<option value="Prof.Ramesh Sundararaman">Prof.Ramesh Sundararaman</option>
+            			<option value="Prof.S Rajagopalan ">Prof.S Rajagopalan </option>
+            			<option value="Prof.S S Prabhu ">Prof.S S Prabhu </option>
+            			<option value="Prof.Sachit Rao">Prof.Sachit Rao</option>
+            			<option value="Prof.Samar Shailendra">Prof.Samar Shailendra</option>
+            			<option value="Prof.Shiva Kumar Malapaka">Prof.Shiva Kumar Malapaka</option>
+            			<option value="Prof.Shrisha Rao">Prof.Shrisha Rao</option>
+            			<option value="Prof.Srinath Srinivasa">Prof.Srinath Srinivasa</option>
+            			<option value="Prof.Srinivas Vivek">Prof.Srinivas Vivek</option>
+            			<option value="Prof.Subajit Sen">Prof.Subajit Sen</option>
+            			<option value="Prof.Subir Kumar Roy">Prof.Subir Kumar Roy</option>
+            			<option value="Prof.Sujit Kumar Chakrabarti">Prof.Sujit Kumar Chakrabarti</option>
+            			<option value="Prof.T K Srikanth ">Prof.T K Srikanth </option>
+            			<option value="Prof.Thangaraju B">Prof.Thangaraju B</option>
+            			<option value="Prof.Tricha Anjali">Prof.Tricha Anjali</option>
+            			<option value="Prof.Uttam Kumar">Prof.Uttam Kumar</option>
+            			<option value="Prof.V Ramasubramanian">Prof.V Ramasubramanian</option>
+            			<option value="Prof.V N Muralidhara ">Prof.V N Muralidhara</option>
+            			<option value="Prof.V Sridhar ">Prof.V Sridhar</option>
+            			<option value="Prof.Valsala Rajan">Prof.Valsala Rajan</option>
+            			<option value="Prof.Vinod Veera Reddy">Prof.Vinod Veera Reddy</option>
+            			<option value="Prof.Viswanath Gopalakrishnan">Prof.Viswanath Gopalakrishnan</option>
+            			<option value="Prof.Vivek Yadav">Prof.Vivek Yadav</option>
+            					
+            			
+          		</select>
+        		</div>
+        		
+        		<div class="form-group">
+          			<h3>Please rate your Professor</h3>
+          			<input type="radio" name="rating" value="1" /> 1
+          			<input type="radio" name="rating" value="2" /> 2
+          			<input type="radio" name="rating" value="3" /> 3
+          			<input type="radio" name="rating" value="4" /> 4
+          			<input type="radio" name="rating" value="5" /> 5
+          			<input type="radio" name="rating" value="6" /> 6
+          			<input type="radio" name="rating" value="7" /> 7
+          			<input type="radio" name="rating" value="8" /> 8
+          			<input type="radio" name="rating" value="9" /> 9
+          			<input type="radio" name="rating" value="10" checked /> 10
+        		</div>
+        		<div class="form-group">
+          			<h3>Comments</h3>
+          			<textarea
+            				name="comments"
+            				id=""
+            				cols="30"
+            				rows="10"
+            				placeholder="Tell us what you liked and/or did not like"
+          ></textarea>
+        </div>
+        <input type="submit" value="Submit" class="btn" />
+  		</form>
+  	</div>
+  </body>
+ </html>
